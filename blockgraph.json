@@ -1,0 +1,840 @@
+{
+  "blocks": [
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 161.28,
+        "y0": 64.08,
+        "x1": 524.34,
+        "y1": 131.4
+      },
+      "content": "State whether the following statements are True or False. 2 A force is always required to change the speed ofmotion (i) of an object: Due to friction, the speed of the ball rolling on (ii)",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 490.14,
+        "y0": 113.94,
+        "x1": 524.52,
+        "y1": 127.26
+      },
+      "content": "a flat",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 162.0,
+        "y0": 127.08,
+        "x1": 524.88,
+        "y1": 341.1
+      },
+      "content": "ground increases There is no force between two charged objects placed at (iii) a small distance apart Two balloons rubbed with a woollen cloth are brought near 3. each other: What would happen and why? When you drop a coin in a glass of water; it sinks, but when 4 you place a bigger wooden block in water, it floats. Explain. Ifaballis thrown upwards,it slows down, stops momentarily, 5 and then falls back to the ground: Name the forces acting on the ball and specify their directions: (i) During its upward motion (ii)   During its downward motion Atits topmost position (iii)",
+      "question_id": "Q3"
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 384.3,
+        "y0": 343.44,
+        "x1": 504.9,
+        "y1": 361.26
+      },
+      "content": "P and moves along",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 162.0,
+        "y0": 344.16,
+        "x1": 345.06,
+        "y1": 358.02
+      },
+      "content": "ball is released from the 6.",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 347.05,
+        "y0": 343.34,
+        "x1": 381.77,
+        "y1": 361.0
+      },
+      "content": "point",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 178.74,
+        "y0": 345.96,
+        "x1": 186.66,
+        "y1": 356.22
+      },
+      "content": "AS",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 507.24,
+        "y0": 347.58,
+        "x1": 523.44,
+        "y1": 357.66
+      },
+      "content": "an",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 176.4,
+        "y0": 357.84,
+        "x1": 372.06,
+        "y1": 375.66
+      },
+      "content": "then   along and inclined",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 390.42,
+        "y0": 358.92,
+        "x1": 504.0,
+        "y1": 372.78
+      },
+      "content": "horizontal surface",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 231.3,
+        "y0": 359.46,
+        "x1": 267.3,
+        "y1": 374.94
+      },
+      "content": "plane",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 376.74,
+        "y0": 361.8,
+        "x1": 523.44,
+        "y1": 371.88
+      },
+      "content": "as a",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 177.3,
+        "y0": 371.52,
+        "x1": 482.76,
+        "y1": 390.06
+      },
+      "content": "shown in the Fig: 5.16. It comes to stop at the point A",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 485.1,
+        "y0": 373.86,
+        "x1": 523.8,
+        "y1": 387.18
+      },
+      "content": "on the",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 176.94,
+        "y0": 387.0,
+        "x1": 524.88,
+        "y1": 404.64
+      },
+      "content": "Think of a way S0 that when the ball is horizontal surface",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 347.4,
+        "y0": 401.04,
+        "x1": 480.24,
+        "y1": 418.86
+      },
+      "content": "P;it stops (i) before the",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 176.4,
+        "y0": 402.3,
+        "x1": 314.64,
+        "y1": 416.16
+      },
+      "content": "released from the same",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 513.36,
+        "y0": 403.2,
+        "x1": 522.9,
+        "y1": 414.54
+      },
+      "content": "A",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 313.57,
+        "y0": 400.78,
+        "x1": 348.83,
+        "y1": 418.4
+      },
+      "content": "point",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 478.09,
+        "y0": 400.77,
+        "x1": 513.53,
+        "y1": 418.59
+      },
+      "content": "point",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 176.76,
+        "y0": 414.9,
+        "x1": 348.48,
+        "y1": 457.92
+      },
+      "content": "(ii) after crossing the point A P",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 162.0,
+        "y0": 462.24,
+        "x1": 506.7,
+        "y1": 523.26
+      },
+      "content": "A Fig: 5.16 e~@ Why do we sometimes slip on smooth surfaces like ice 7.",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 509.04,
+        "y0": 510.3,
+        "x1": 523.44,
+        "y1": 520.38
+      },
+      "content": "or",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 176.04,
+        "y0": 519.3,
+        "x1": 355.32,
+        "y1": 557.82
+      },
+      "content": "polished floors? Explain: Is any force being applied to",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 377.28,
+        "y0": 540.72,
+        "x1": 523.62,
+        "y1": 556.2
+      },
+      "content": "object in non-uniform",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 161.28,
+        "y0": 542.52,
+        "x1": 170.82,
+        "y1": 553.86
+      },
+      "content": "8",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 358.02,
+        "y0": 543.78,
+        "x1": 443.52,
+        "y1": 553.86
+      },
+      "content": "an a",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 81.0,
+        "y0": 556.56,
+        "x1": 525.06,
+        "y1": 641.52
+      },
+      "content": "motion? The weight of an object on the Moon becomes one-sixth of its 9 weight on the Earth: What causes this change? Does the mass of the object also become one-sixth of its mass on the Earth? C I",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 263.88,
+        "y0": 639.18,
+        "x1": 516.78,
+        "y1": 657.18
+      },
+      "content": "Reflect on the questions framed by your",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 66.6,
+        "y0": 642.78,
+        "x1": 227.16,
+        "y1": 665.1
+      },
+      "content": "think Shouldn't it be",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 262.62,
+        "y0": 658.62,
+        "x1": 424.62,
+        "y1": 676.08
+      },
+      "content": "friends and try to answer",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 93.6,
+        "y0": 658.8,
+        "x1": 186.48,
+        "y1": 683.28
+      },
+      "content": "But we thought Maybe",
+      "question_id": null
+    },
+    {
+      "block_type": "figure_block",
+      "bbox": {
+        "x0": 282.0,
+        "y0": 432.24,
+        "x1": 395.76,
+        "y1": 483.72
+      },
+      "asset_id": "image_p1_i0",
+      "related_question": null
+    },
+    {
+      "block_type": "figure_block",
+      "bbox": {
+        "x0": 39.6,
+        "y0": 653.28,
+        "x1": 246.72,
+        "y1": 785.4
+      },
+      "asset_id": "image_p1_i1",
+      "related_question": null
+    },
+    {
+      "block_type": "header_block",
+      "bbox": {
+        "x0": 122.04,
+        "y0": 21.78,
+        "x1": 149.58,
+        "y1": 35.64
+      },
+      "functional": true,
+      "content": "(O"
+    },
+    {
+      "block_type": "header_block",
+      "bbox": {
+        "x0": 346.86,
+        "y0": 21.96,
+        "x1": 477.9,
+        "y1": 35.82
+      },
+      "functional": true,
+      "content": "Chapter 5 Exploring Forces"
+    },
+    {
+      "block_type": "header_block",
+      "bbox": {
+        "x0": 83.7,
+        "y0": 23.76,
+        "x1": 202.5,
+        "y1": 35.46
+      },
+      "functional": true,
+      "content": "Oooo 0o 0o"
+    },
+    {
+      "block_type": "header_block",
+      "bbox": {
+        "x0": 260.82,
+        "y0": 24.3,
+        "x1": 296.46,
+        "y1": 35.46
+      },
+      "functional": true,
+      "content": "Oooc 0"
+    },
+    {
+      "block_type": "header_block",
+      "bbox": {
+        "x0": 530.64,
+        "y0": 25.2,
+        "x1": 545.22,
+        "y1": 35.28
+      },
+      "functional": true,
+      "content": "79"
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 71.28,
+        "y0": 55.98,
+        "x1": 441.36,
+        "y1": 73.8
+      },
+      "content": "Three objects 1, 2,and 3 ofthe same size and shape but made 10",
+      "question_id": null
+    },
+    {
+      "block_type": "header_block",
+      "bbox": {
+        "x0": 531.54,
+        "y0": 66.78,
+        "x1": 538.2,
+        "y1": 75.24
+      },
+      "functional": true,
+      "content": "3"
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 253.08,
+        "y0": 70.74,
+        "x1": 337.32,
+        "y1": 88.2
+      },
+      "content": "placed in the",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 94.14,
+        "y0": 71.28,
+        "x1": 226.26,
+        "y1": 85.14
+      },
+      "content": "of different materials",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 92.95,
+        "y0": 73.26,
+        "x1": 379.44,
+        "y1": 116.28
+      },
+      "content": "water: are They dip to different depths as shown in Fig: 5.17. If the weights of the three objects 1, 2, and 3",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 358.74,
+        "y0": 103.14,
+        "x1": 379.26,
+        "y1": 113.22
+      },
+      "content": "are",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 93.06,
+        "y0": 114.3,
+        "x1": 283.86,
+        "y1": 167.93
+      },
+      "content": "respectively, then and W3 W2 W1' =Wg = Wz (i) Wi 7 Wg 7 W2 (ii)  Wi",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 449.46,
+        "y0": 158.04,
+        "x1": 490.86,
+        "y1": 170.28
+      },
+      "content": "Fig: 5.17",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 90.36,
+        "y0": 164.89,
+        "x1": 379.8,
+        "y1": 257.4
+      },
+      "content": "7 Wg 7 W1 W2 ' (iii) W 3 (iv) >Wi > Wz Discover; design, and debate Collect objects made of different materials, such",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 382.14,
+        "y0": 241.74,
+        "x1": 441.18,
+        "y1": 257.94
+      },
+      "content": "plastic, as",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 95.04,
+        "y0": 255.06,
+        "x1": 276.66,
+        "y1": 272.34
+      },
+      "content": "wool;  silk, rubber,  polythene",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 280.26,
+        "y0": 255.42,
+        "x1": 439.74,
+        "y1": 273.06
+      },
+      "content": "sheet,  paper, and metals.",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 93.78,
+        "y0": 270.18,
+        "x1": 441.36,
+        "y1": 330.3
+      },
+      "content": "Rub one material with another and check if it attracts small pieces of paper or not; that is, whether it gets charged or not: Record your observations in a systematic manner and write research paper: a",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 451.08,
+        "y0": 317.7,
+        "x1": 573.84,
+        "y1": 334.44
+      },
+      "content": "Science Society",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 93.6,
+        "y0": 330.3,
+        "x1": 440.82,
+        "y1": 363.6
+      },
+      "content": "Imagine a scenario where the gravity disappears. Develop a story: Create a cartoon strip to present your story",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 491.58,
+        "y0": 349.2,
+        "x1": 554.58,
+        "y1": 374.4
+      },
+      "content": "Inter- disciplinary",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 94.14,
+        "y0": 365.04,
+        "x1": 440.1,
+        "y1": 382.5
+      },
+      "content": "Organise a discussion in your class on the topic: Friction-~a",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 502.02,
+        "y0": 372.78,
+        "x1": 545.4,
+        "y1": 385.02
+      },
+      "content": "Projects",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 93.06,
+        "y0": 377.82,
+        "x1": 441.54,
+        "y1": 411.66
+      },
+      "content": "necessity or a problem? Make a note of the discussion and necessity and when it is a problem: state where friction is a",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 321.4,
+        "y0": 411.85,
+        "x1": 352.88,
+        "y1": 431.09
+      },
+      "content": "help",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 94.32,
+        "y0": 413.1,
+        "x1": 323.64,
+        "y1": 430.38
+      },
+      "content": "Make your own spring balance with the",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 350.64,
+        "y0": 413.28,
+        "x1": 441.72,
+        "y1": 430.02
+      },
+      "content": "of your teacher",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 94.32,
+        "y0": 426.6,
+        "x1": 330.48,
+        "y1": 444.96
+      },
+      "content": "and calibrate it using standard weights",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 334.8,
+        "y0": 428.22,
+        "x1": 441.0,
+        "y1": 442.08
+      },
+      "content": "Now measure the",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 94.5,
+        "y0": 442.26,
+        "x1": 441.18,
+        "y1": 472.68
+      },
+      "content": "weights of different objects and calculate the ratio of the weight and of different objects.",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 328.5,
+        "y0": 457.2,
+        "x1": 427.68,
+        "y1": 473.22
+      },
+      "content": "Do you observe",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 169.2,
+        "y0": 459.36,
+        "x1": 200.7,
+        "y1": 470.52
+      },
+      "content": "mass",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 432.54,
+        "y0": 460.26,
+        "x1": 439.74,
+        "y1": 469.44
+      },
+      "content": "a",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 93.06,
+        "y0": 469.8,
+        "x1": 441.54,
+        "y1": 521.64
+      },
+      "content": "pattern? An electroscope is a device which can determine whether an object is electrically charged:  You",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 318.6,
+        "y0": 504.72,
+        "x1": 441.18,
+        "y1": 521.46
+      },
+      "content": "can make your own",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 93.42,
+        "y0": 518.4,
+        "x1": 442.26,
+        "y1": 649.24
+      },
+      "content": "electroscope (Fig: 5.18) in your class with the help of your teacher, test the device. Explore in what other ways you may 8 use this electroscope.",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 287.28,
+        "y0": 558.18,
+        "x1": 361.98,
+        "y1": 649.26
+      },
+      "content": "Copper wire Straw Lid Jar Aluminium foil",
+      "question_id": null
+    },
+    {
+      "block_type": "text_block",
+      "bbox": {
+        "x0": 265.5,
+        "y0": 682.02,
+        "x1": 307.98,
+        "y1": 695.16
+      },
+      "content": "Fig: 5.18",
+      "question_id": null
+    },
+    {
+      "block_type": "figure_block",
+      "bbox": {
+        "x0": 217.32,
+        "y0": 553.44,
+        "x1": 276.84,
+        "y1": 679.68
+      },
+      "asset_id": "image_p2_i0",
+      "related_question": null
+    },
+    {
+      "block_type": "figure_block",
+      "bbox": {
+        "x0": 444.24,
+        "y0": 264.24,
+        "x1": 513.24,
+        "y1": 354.6
+      },
+      "asset_id": "image_p2_i1",
+      "related_question": null
+    },
+    {
+      "block_type": "figure_block",
+      "bbox": {
+        "x0": 509.52,
+        "y0": 272.28,
+        "x1": 577.8,
+        "y1": 347.28
+      },
+      "asset_id": "image_p2_i2",
+      "related_question": null
+    },
+    {
+      "block_type": "figure_block",
+      "bbox": {
+        "x0": 454.56,
+        "y0": 330.36,
+        "x1": 558.84,
+        "y1": 400.8
+      },
+      "asset_id": "image_p2_i3",
+      "related_question": null
+    }
+  ]
+}
