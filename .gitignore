@@ -41,3 +41,7 @@ venv.bak/
 # Project specific
 assets_output/
 .pyre_configuration
+
+# Temporary OCR and Test Files
+assets/_ocr_temp*
+*.pdf

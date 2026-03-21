@@ -10,6 +10,7 @@ class BoundingBox(BaseModel):
 class BaseBlock(BaseModel):
     block_type: str
     bbox: BoundingBox
+    page: Optional[int] = Field(default=None, exclude=True)  # Internal: page number
 
 class TextBlock(BaseBlock):
     block_type: str = "text_block"
@@ -19,6 +20,9 @@ class TextBlock(BaseBlock):
 class FigureBlock(BaseBlock):
     block_type: str = "figure_block"
     asset_id: str
+    caption: Optional[str] = None
+    is_functional: bool = False
+    purpose: str = "decorative"
     related_question: Optional[str] = None
 
 class HeaderBlock(BaseBlock):

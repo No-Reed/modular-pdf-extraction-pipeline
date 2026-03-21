@@ -94,7 +94,7 @@ class PyMuPDFProvider(LayoutProvider):
         return layout_data
 
 class OCRLayoutProvider(LayoutProvider):
-    """Uses EasyOCR to extract text from image-based PDFs and PyMuPDF for figures."""
+    """Uses PaddleOCR to extract text from image-based PDFs and PyMuPDF for figures."""
     
     MIN_FIGURE_SIZE = 50  # Minimum width/height in points to keep a figure
     
