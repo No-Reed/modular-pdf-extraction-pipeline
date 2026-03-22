@@ -8,7 +8,7 @@ Output structure:
 
 import os
 import re
-from typing import Optional
+from typing import Optional, Dict, List
 
 from models import BlockGraph, TextBlock, FigureBlock, HeaderBlock
 
@@ -85,13 +85,13 @@ def export_to_taxonomy(
     chapter_name = _extract_chapter_name(block_graph)
 
     # ── Build question_id → asset_id lookup from figures ──────────
-    question_to_asset: dict[str, str] = {}
+    question_to_asset: Dict[str, str] = {}
     for block in block_graph.blocks:
         if isinstance(block, FigureBlock) and block.related_question:
             question_to_asset[block.related_question] = block.asset_id
 
     # ── Assemble the question list ────────────────────────────────
-    questions: list[str] = []
+    questions: List[str] = []
     for block in block_graph.blocks:
         if isinstance(block, TextBlock) and block.question_id:
             text = block.content.strip()
