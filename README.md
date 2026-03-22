@@ -2,7 +2,7 @@
 
 This repository implements a three-phase micro-parsing pipeline for CBSE Science PDFs, designed specifically to parse complex multi-column documents into structured curriculum taxonomy JSONs.
 
-## 💡 Evaluated Solutions & Architectural Reasoning
+## Evaluated Solutions & Architectural Reasoning
 
 Before arriving at this architecture, three distinct approaches were evaluated:
 
@@ -47,6 +47,6 @@ This will:
 ## Exception Handling
 If the PDF is corrupted, `PyMuPDFExtractor` instantiation (`fitz.open`) will raise a `fitz.fitz_error` or `RuntimeError`. In a production setup, we would wrap Phase 1 execution in a `try...except` block, log the parsing failure, and gracefully exit or fallback depending on requirements.
 
-## 🚀 Future Changes
+## Future Changes
 
 While the spatial heuristic logic operates deterministically, it inherently relies on regex patterns and geometric distance calculations. To further improve robustness across a wider variance of textbook publishers and formatting edge cases, the **immediate next milestone** is replacing the heuristic regex engine with a localized, quantized instance of **LayoutLMv3**. By fine-tuning LayoutLMv3, the pipeline will achieve zero-shot generalizability for semantic classification without sacrificing the privacy and cost benefits of a local architecture.
