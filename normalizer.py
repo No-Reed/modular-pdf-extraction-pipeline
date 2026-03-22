@@ -11,28 +11,8 @@ from typing import Dict, Any, List, Tuple, Optional
 from models import BlockGraph, TextBlock, FigureBlock, HeaderBlock, BoundingBox
 
 
-# ─── Regex patterns ───────────────────────────────────────────────
-QUESTION_START_RE = re.compile(r'^(\d+)\.')
-FIGURE_LABEL_RE = re.compile(r'Fig\.?\s*(\d+\.\d+)', re.IGNORECASE)
-# Section headers that terminate question merging
-# Works at block start (^) and as an inline search pattern
-SECTION_HEADER_RE = re.compile(
-    r'(?i)(?:^|\s)(?:Discover[,\s]|Science\s+Society|Inter-?\s*disciplinary|Projects\b)',
-)
-# Stricter pattern for inline splitting within a merged block
-# Group 1 = section title, everything after = section body
-INLINE_SECTION_RE = re.compile(
-    r'\s+(Discover[,\s]+design[,\s]*and\s+debate)',
-    re.IGNORECASE,
-)
-# Detects the start of a new bullet-point / activity in section content
-# Matches at block start OR after sentence-ending punctuation (.?!)
-BULLET_START_RE = re.compile(
-    r'(?:^|(?<=[.?!])\s+)'
-    r'(?:Collect |Imagine |Organise |Organize |Make your |'
-    r'An electroscope|Design |Explore |Create )',
-    re.IGNORECASE,
-)
+from models import BlockGraph, TextBlock, FigureBlock, HeaderBlock, BoundingBox
+from config import config
 
 
 class Normalizer:
@@ -43,6 +23,22 @@ class Normalizer:
         self.reassembly_log: List[Dict[str, Any]] = []
         self.anchor_log: List[Dict[str, Any]] = []
         self.dedup_log: List[Dict[str, Any]] = []
+
+        # Load extraction profile from config
+        profile = config.extraction_profile
+        
+        self.QUESTION_START_RE = re.compile(profile.question_regex)
+        self.FIGURE_LABEL_RE = re.compile(profile.figure_label_regex, re.IGNORECASE)
+        
+        # Build section header dynamically from decorative headers
+        escaped_headers = [re.escape(h) for h in profile.decorative_headers]
+        self.SECTION_HEADER_RE = re.compile(
+            r'(?i)(?:^|\s)(?:' + '|'.join(escaped_headers) + r')',
+        )
+        
+        self.INLINE_SECTION_RE = re.compile(profile.inline_section_regex, re.IGNORECASE)
+        self.BULLET_START_RE = re.compile(profile.bullet_start_regex, re.IGNORECASE)
+        self.VERT_BUFFER = profile.vert_buffer
 
     # ──────────────────────────────────────────────────────────────
     # Public entry point
@@ -159,7 +155,7 @@ class Normalizer:
             if current is None:
                 return
             # Split inline section headers (e.g. "Discover, design")
-            q_block, remainder = Normalizer._split_inline_section(current)
+            q_block, remainder = self._split_inline_section(current)
             if merge_count > 0 or remainder is not None:
                 log.append({
                     "question_id": q_block.question_id,
@@ -174,8 +170,8 @@ class Normalizer:
 
         for block in text_blocks:
             stripped = block.content.strip()
-            q_match = QUESTION_START_RE.match(stripped)
-            is_section_header = bool(SECTION_HEADER_RE.match(stripped))
+            q_match = self.QUESTION_START_RE.match(stripped)
+            is_section_header = bool(self.SECTION_HEADER_RE.match(stripped))
 
             if q_match:
                 # Flush previously accumulated question
@@ -215,13 +211,12 @@ class Normalizer:
 
         return merged, log
 
-    @staticmethod
-    def _split_inline_section(block: TextBlock) -> Tuple[TextBlock, Optional[TextBlock]]:
+    def _split_inline_section(self, block: TextBlock) -> Tuple[TextBlock, Optional[TextBlock]]:
         """If a question block contains an inline section header
         (e.g. 'Discover, design, and debate'), split the content.
         Returns (question_block, section_remainder_or_None).
         The section header is kept as the start of the remainder block."""
-        m = INLINE_SECTION_RE.search(block.content)
+        m = self.INLINE_SECTION_RE.search(block.content)
         if not m:
             return block, None
 
@@ -288,8 +283,8 @@ class Normalizer:
 
             # Detect section header start
             stripped = block.content.strip()
-            is_section = bool(SECTION_HEADER_RE.search(stripped))
-            is_bullet_start = bool(BULLET_START_RE.search(stripped))
+            is_section = bool(self.SECTION_HEADER_RE.search(stripped))
+            is_bullet_start = bool(self.BULLET_START_RE.search(stripped))
 
             if is_section:
                 # Flush previous group
@@ -348,13 +343,12 @@ class Normalizer:
 
         return final
 
-    @staticmethod
-    def _split_on_bullets(block: TextBlock) -> List[TextBlock]:
+    def _split_on_bullets(self, block: TextBlock) -> List[TextBlock]:
         """Split a single text block into multiple blocks at bullet-start
         boundaries found within its content."""
         content = block.content
         # Find all bullet starts (skip position 0 since that's the block start)
-        splits = [m.start() for m in BULLET_START_RE.finditer(content)]
+        splits = [m.start() for m in self.BULLET_START_RE.finditer(content)]
         # Only keep splits that are not at position 0
         splits = [s for s in splits if s > 0]
 
@@ -455,8 +449,8 @@ class Normalizer:
     # ──────────────────────────────────────────────────────────────
     # Pre-pass — Extract figure label anchor positions
     # ──────────────────────────────────────────────────────────────
-    @staticmethod
     def _extract_label_anchors(
+        self,
         raw_text_blocks: List[TextBlock],
     ) -> List[Dict[str, Any]]:
         """Scan the RAW (pre-reassembly) text blocks for figure labels
@@ -467,7 +461,7 @@ class Normalizer:
         """
         anchors: List[Dict[str, Any]] = []
         for tb in raw_text_blocks:
-            for m in FIGURE_LABEL_RE.finditer(tb.content):
+            for m in self.FIGURE_LABEL_RE.finditer(tb.content):
                 anchors.append({
                     "label": m.group(0),       # e.g. "Fig. 5.17"
                     "fig_id": m.group(1),       # e.g. "5.17"
@@ -482,8 +476,6 @@ class Normalizer:
     # ──────────────────────────────────────────────────────────────
     # Pass 2 — Visual Anchoring & Classification
     # ──────────────────────────────────────────────────────────────
-    VERT_BUFFER = 100  # Maximum vertical gap (in PDF points) for label-figure linking
-
     def _pass2_classify_figures(
         self,
         text_blocks: List[TextBlock],
@@ -509,7 +501,7 @@ class Normalizer:
         # (scan the POST-reassembly text which has question_ids assigned)
         label_to_question: Dict[str, Optional[str]] = {}
         for tb in text_blocks:
-            for m in FIGURE_LABEL_RE.finditer(tb.content):
+            for m in self.FIGURE_LABEL_RE.finditer(tb.content):
                 label_to_question[m.group(0)] = tb.question_id
 
         # Phase A: Compute all valid (label, figure, distance) candidates

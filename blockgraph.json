@@ -184,7 +184,7 @@
         "x1": 395.76,
         "y1": 483.72
       },
-      "asset_id": "image_p1_i0",
+      "asset_id": "Q6_Fig__5_16.png",
       "caption": "Fig. 5.16",
       "is_functional": true,
       "purpose": "referenced_diagram",
@@ -198,7 +198,7 @@
         "x1": 246.72,
         "y1": 785.4
       },
-      "asset_id": "image_p1_i1",
+      "asset_id": "decorative_p1_1.png",
       "caption": null,
       "is_functional": false,
       "purpose": "decorative",
@@ -212,7 +212,7 @@
         "x1": 276.84,
         "y1": 679.68
       },
-      "asset_id": "image_p2_i0",
+      "asset_id": "Fig._5.18.png",
       "caption": "Fig. 5.18",
       "is_functional": true,
       "purpose": "referenced_diagram",
@@ -223,42 +223,14 @@
       "bbox": {
         "x0": 444.24,
         "y0": 264.24,
-        "x1": 513.24,
-        "y1": 354.6
+        "x1": 577.8,
+        "y1": 400.8
       },
-      "asset_id": "image_p2_i1",
+      "asset_id": "Q10_Fig_5.17.png",
       "caption": "Fig. 5.17",
       "is_functional": true,
       "purpose": "referenced_diagram",
       "related_question": "Q10"
-    },
-    {
-      "block_type": "figure_block",
-      "bbox": {
-        "x0": 509.52,
-        "y0": 272.28,
-        "x1": 577.8,
-        "y1": 347.28
-      },
-      "asset_id": "image_p2_i2",
-      "caption": null,
-      "is_functional": false,
-      "purpose": "decorative",
-      "related_question": null
-    },
-    {
-      "block_type": "figure_block",
-      "bbox": {
-        "x0": 454.56,
-        "y0": 330.36,
-        "x1": 558.84,
-        "y1": 400.8
-      },
-      "asset_id": "image_p2_i3",
-      "caption": "Fig. 5.18",
-      "is_functional": true,
-      "purpose": "referenced_diagram",
-      "related_question": null
     }
   ]
 }

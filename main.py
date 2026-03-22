@@ -1,8 +1,9 @@
 import json
 from config import config
-from extractor import PyMuPDFExtractor
+from asset_exporter import AssetExporter
 from layout_engine import LayoutFactory
 from normalizer import Normalizer
+from taxonomy_exporter import export_to_taxonomy
 
 
 def main():
@@ -10,11 +11,8 @@ def main():
     print("  MICRO-PARSING PIPELINE — CBSE Science PDF")
     print("=" * 72)
 
-    # ── Phase 1: Asset Extraction ──────────────────────────────────
-    print("\n[Phase 1] Asset Extraction")
-    extractor = PyMuPDFExtractor(config.pdf_path, "assets_output")
-    saved_images = extractor.extract()
-    print(f"  → Extracted {len(saved_images)} embedded images and page renderings.")
+    # ── Phase 1: Asset Extraction (DEPRECATED - moved to semantic cropping later) ──
+    print("\n[Phase 1] Asset Extraction (Skipped: will be cropped semantically later)")
 
     # ── Phase 2: Layout Extraction (Factory Pattern) ───────────────
     print(f"\n[Phase 2] Layout Extraction  (provider: '{config.layout_provider}')")
@@ -24,10 +22,14 @@ def main():
     print(f"  → Raw layout contains {total_raw} blocks across "
           f"{len(raw_layout.get('pages', []))} pages.")
 
-    # ── Phase 3: Three-Pass Semantic Normalization ─────────────────
     print(f"\n[Phase 3] Semantic Normalization (3-pass engine)")
     normalizer = Normalizer()
     block_graph = normalizer.normalize(raw_layout)
+
+    # ── Phase 4: Semantic Asset Cropping ───────────────────────────
+    print(f"\n[Phase 4] Semantic Asset Cropping")
+    asset_exporter = AssetExporter(config.pdf_path, "assets_output")
+    block_graph = asset_exporter.export(block_graph)
 
     # ── Terminal Report ────────────────────────────────────────────
     print("\n" + "─" * 72)
@@ -111,9 +113,16 @@ def main():
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(block_graph.model_dump_json(indent=2))
 
+    # ── Write taxonomy_output.json ────────────────────────────────
+    taxonomy = export_to_taxonomy(block_graph, pdf_path=config.pdf_path)
+    taxonomy_path = "taxonomy_output.json"
+    with open(taxonomy_path, "w", encoding="utf-8") as f:
+        json.dump(taxonomy, f, indent=2, ensure_ascii=False)
+
     total_blocks = len(block_graph.blocks)
     print("\n" + "=" * 72)
     print(f"  Pipeline complete. Wrote {total_blocks} blocks → '{output_path}'")
+    print(f"  Taxonomy exported → '{taxonomy_path}'")
     print("=" * 72)
 
 

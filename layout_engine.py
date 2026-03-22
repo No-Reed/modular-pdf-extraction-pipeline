@@ -86,7 +86,7 @@ class PyMuPDFProvider(LayoutProvider):
                 page_dict["blocks"].append({
                     "type": "figure",
                     "bbox": bbox,
-                    "asset_id": f"image_p{page_num + 1}_i{img_info.get('number', 0)}"
+                    "asset_id": f"temp_p{page_num + 1}_idx{b_idx}_{img_info.get('number', 0)}"
                 })
                     
             layout_data["pages"].append(page_dict)
@@ -96,20 +96,19 @@ class PyMuPDFProvider(LayoutProvider):
 class OCRLayoutProvider(LayoutProvider):
     """Uses PaddleOCR to extract text from image-based PDFs and PyMuPDF for figures."""
     
-    MIN_FIGURE_SIZE = 50  # Minimum width/height in points to keep a figure
-    
     def extract_layout(self, pdf_path: str) -> Dict[str, Any]:
         import pymupdf
         from paddleocr import PaddleOCR
         import os
         import re
+        from config import config
         
         doc = pymupdf.open(pdf_path)
         ocr = PaddleOCR(use_angle_cls=False, lang='en')
         layout_data = {"pages": []}
         
         # Regex to detect numbered questions: can be "10. ", "2_ ", etc., due to OCR errors
-        question_re = re.compile(r'(?:^|\s)(\d+)[._]\s')
+        question_re = re.compile(config.extraction_profile.layout_question_regex)
         
         for page_num in range(len(doc)):
             page = doc[page_num]
@@ -226,27 +225,50 @@ class OCRLayoutProvider(LayoutProvider):
             if os.path.exists(temp_img_path):
                 os.remove(temp_img_path)
             
-            # --- FIGURE EXTRACTION via PyMuPDF (with noise filtering) ---
+            # --- FIGURE EXTRACTION via PyMuPDF (with noise filtering & clustering) ---
             images = page.get_image_info()
+            raw_figure_boxes = []
             for img_info in images:
                 x0, y0, x1, y1 = img_info["bbox"]
                 width = x1 - x0
                 height = y1 - y0
                 
-                # Filter out tiny artifact images (noise)
-                if width < self.MIN_FIGURE_SIZE or height < self.MIN_FIGURE_SIZE:
+                min_size = config.extraction_profile.min_figure_size
+                if width < min_size or height < min_size:
                     continue
-                
-                # Filter out full-page background images
                 if width > page_width * 0.95 and height > page_height * 0.95:
                     continue
                 
-                bbox = {"x0": round(x0, 2), "y0": round(y0, 2),
-                        "x1": round(x1, 2), "y1": round(y1, 2)}
+                raw_figure_boxes.append({"x0": round(x0, 2), "y0": round(y0, 2),
+                                         "x1": round(x1, 2), "y1": round(y1, 2)})
+            
+            # Cluster adjacent/overlapping figure boxes (distance < 20pts)
+            merged_boxes = []
+            while raw_figure_boxes:
+                box = raw_figure_boxes.pop(0)
+                merged = True
+                while merged:
+                    merged = False
+                    for i in range(len(raw_figure_boxes) - 1, -1, -1):
+                        other = raw_figure_boxes[i]
+                        bx0, by0 = box["x0"] - 20, box["y0"] - 20
+                        bx1, by1 = box["x1"] + 20, box["y1"] + 20
+                        
+                        if not (other["x1"] < bx0 or other["x0"] > bx1 or
+                                other["y1"] < by0 or other["y0"] > by1):
+                            box["x0"] = min(box["x0"], other["x0"])
+                            box["y0"] = min(box["y0"], other["y0"])
+                            box["x1"] = max(box["x1"], other["x1"])
+                            box["y1"] = max(box["y1"], other["y1"])
+                            raw_figure_boxes.pop(i)
+                            merged = True
+                merged_boxes.append(box)
+
+            for idx, bbox in enumerate(merged_boxes):
                 page_dict["blocks"].append({
                     "type": "figure",
                     "bbox": bbox,
-                    "asset_id": f"image_p{page_num + 1}_i{img_info.get('number', 0)}"
+                    "asset_id": f"temp_p{page_num + 1}_idx{idx}"
                 })
             
             layout_data["pages"].append(page_dict)
